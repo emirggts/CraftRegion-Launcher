@@ -5,7 +5,7 @@
     "description": "CraftRegion Launcher",
     "main": "src/app.js",
     "author": "Emirggts, Luuxis",
-    "url": "http://craftregion.net/launchers",
+    "url": "https://craftregion.net/launchers",
     "engines": {
         "node": "16.x.x"
     },
