@@ -1,11 +1,11 @@
 {
     "name": "CraftRegion-Launcher",
     "preductname": "CraftRegion Launcher",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "CraftRegion Launcher",
     "main": "src/app.js",
     "author": "Emirggs, Luuxis",
-    "url": "http://launcher.selvania.fr",
+    "url": "http://craftregion.net/launchers",
     "engines": {
         "node": "16.x.x"
     },
