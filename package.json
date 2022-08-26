@@ -1,10 +1,10 @@
 {
-    "name": "Selvania-Launcher",
-    "preductname": "Selvania Launcher",
+    "name": "CraftRegion-Launcher",
+    "preductname": "CraftRegion Launcher",
     "version": "1.0.2",
-    "description": "Launcher Mincraft custom (crack, premium)",
+    "description": "CraftRegion Launcher",
     "main": "src/app.js",
-    "author": "Luuxis",
+    "author": "Emirggs, Luuxis",
     "url": "http://launcher.selvania.fr",
     "engines": {
         "node": "16.x.x"

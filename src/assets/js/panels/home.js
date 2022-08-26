@@ -136,7 +136,7 @@ class Home {
 
             launch.on('progress', (DL, totDL) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Téléchargement ${((DL / totDL) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Guncellemeler Yukleniyor! ${((DL / totDL) * 100).toFixed(0)}%`
                 ipcRenderer.send('main-window-progress', {DL, totDL})
                 progressBar.value = DL;
                 progressBar.max = totDL;
@@ -148,7 +148,7 @@ class Home {
 
             launch.on('check', (e) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Vérification ${((DL / totDL) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Kontrol Ediliyor ${((DL / totDL) * 100).toFixed(0)}%`
                 progressBar.value = DL;
                 progressBar.max = totDL;
 
@@ -158,7 +158,7 @@ class Home {
                 new logger('Minecraft', '#36b030');
                 if(launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
                 progressBar.style.display = "none"
-                info.innerHTML = `Demarrage en cours...`
+                info.innerHTML = `Devam ediyor..`
                 console.log(e);
             })
 
@@ -167,7 +167,7 @@ class Home {
                 progressBar.style.display = "none"
                 info.style.display = "none"
                 playBtn.style.display = "block"
-                info.innerHTML = `Vérification`
+                info.innerHTML = `Kontrol Ediliyor`
                 new logger('Launcher', '#7289da');
                 console.log('Close');
             })
@@ -183,12 +183,12 @@ class Home {
 
         if (!serverPing.error) {
             nameServer.textContent = this.config.status.nameServer;
-            serverMs.innerHTML = `<span class="green">En ligne</span> - ${serverPing.ms}ms`;
+            serverMs.innerHTML = `<span class="green">play.craftregion.net</span> - ${serverPing.ms}ms`;
             online.classList.toggle("off");
             playersConnected.textContent = serverPing.playersConnect;
         } else if (serverPing.error) {
-            nameServer.textContent = 'Serveur indisponible';
-            serverMs.innerHTML = `<span class="red">Hors ligne</span>`;
+            nameServer.textContent = 'Sunucu Kapali';
+            serverMs.innerHTML = `<span class="red">play.craftregion.net</span>`;
         }
     }
 

@@ -22,9 +22,7 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "Je... vie...", "author": "Luuxis" },
-            { "message": "Salut je suis du code.", "author": "Luuxis" },
-            { "message": "Linux n' ai pas un os, mais un kernel.", "author": "Luuxis" }
+            { "message": "Eğlenceye zıpla!", "author": "CraftRegion" },
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
@@ -49,17 +47,18 @@ class Splash {
             else this.checkUpdate();
         }).catch(e => {
             console.error(e);
-            return this.shutdown("Aucune connexion internet détectée,<br>veuillez réessayer ultérieurement.");
+            return this.shutdown("İnternet bağlantısı algılanmadı,<br>lütfen daha sonra tekrar deneyin.");
         })
     }
 
     async checkUpdate() {
-        this.setStatus(`recherche de mise à jour...`);
+        this.setStatus(`Güncellemeler Kontrol Ediliyor..`);
         ipcRenderer.send('update-app');
 
         ipcRenderer.on('updateAvailable', () => {
-            this.setStatus(`Mise à jour disponible !`);
+            this.setStatus(`Guncelleme Mevcut!`);
             this.toggleProgress();
+            ipcRenderer.send('start-update');
         })
 
         ipcRenderer.on('download-progress', (event, progress) => {
@@ -73,16 +72,16 @@ class Splash {
 
 
     startLauncher() {
-        this.setStatus(`Démarrage du launcher`);
+        this.setStatus(`Launcher Baslatiliyor`);
         ipcRenderer.send('main-window-open');
         ipcRenderer.send('update-window-close');
     }
 
     shutdown(text) {
-        this.setStatus(`${text}<br>Arrêt dans 5s`);
+        this.setStatus(`${text}<br>Kapanıyor 5s`);
         let i = 4;
         setInterval(() => {
-            this.setStatus(`${text}<br>Arrêt dans ${i--}s`);
+            this.setStatus(`${text}<br>Kapanıyor ${i--}s`);
             if (i < 0) ipcRenderer.send('update-window-close');
         }, 1000);
     }
