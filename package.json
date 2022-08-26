@@ -1,10 +1,10 @@
 {
     "name": "CraftRegion-Launcher",
     "preductname": "CraftRegion Launcher",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "CraftRegion Launcher",
     "main": "src/app.js",
-    "author": "Emirggs, Luuxis",
+    "author": "Emirggts, Luuxis",
     "url": "http://craftregion.net/launchers",
     "engines": {
         "node": "16.x.x"
@@ -31,6 +31,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/emirggts/CraftRegion-Launcher/.git"
     }
 }
